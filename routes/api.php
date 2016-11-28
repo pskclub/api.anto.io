@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -27,10 +25,11 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'v1'], function () {
 
     Route::post('/auth', 'api\v1\AuthController@authenticated');
-    Route::get('/auth/refresh', ['middleware' => 'jwt.refresh', function() {}]);
+    Route::get('/auth/refresh', ['middleware' => 'jwt.refresh', function () {
+    }]);
 
     Route::group(['middleware' => 'jwt.auth'], function () {
-        //user manager
+        Route::get('/things', 'api\v1\ThingController@thingAndChannel');
         Route::get('/auth', 'api\v1\AuthController@getAuthenticatedUser');
         Route::post('/logout', 'api\v1\AuthController@logout');
 

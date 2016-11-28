@@ -8,8 +8,8 @@ class Channels extends Model
 {
     protected $table = 'channels';
 
-    public function think()
+    public function thing()
     {
-        return $this->belongsTo('App\Thinks');
+        return $this->belongsTo('App\Things');
     }
 }

@@ -27,9 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function thinks()
+    public function things()
     {
-        return $this->hasMany('App\Thinks');
+        return $this->hasMany('App\Things');
     }
 
     public function keys()

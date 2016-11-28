@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Thinks extends Model
+class Things extends Model
 {
-    protected $table = 'thinks';
+    protected $table = 'things';
 
     public function channels()
     {
-        return $this->hasMany('App\Channels');
+        return $this->hasMany('App\Channels','thing_id');
     }
 
     public function user()
