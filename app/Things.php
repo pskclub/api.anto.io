@@ -8,6 +8,10 @@ class Things extends Model
 {
     protected $table = 'things';
 
+    protected $hidden = [
+        'id','user_id'
+    ];
+
     public function channels()
     {
         return $this->hasMany('App\Channels','thing_id');
